@@ -5,7 +5,7 @@ WAF.define('JqxCombobox', ['waf-core/widget'], function(widget) {
 
     var JqxCombobox = widget.create('JqxCombobox', {
 
-        source: widget.property({
+        items: widget.property({
             type: 'datasource',
             attributes: [{
                 name: 'value'
@@ -54,7 +54,7 @@ WAF.define('JqxCombobox', ['waf-core/widget'], function(widget) {
                 subscriber.resume();
             });
 
-            this.source.onCollectionChange(function(elements) {
+            this.items.onCollectionChange(function(elements) {
                 if (!elements.length) return;
                 $node.jqxComboBox({
                     source: elements
